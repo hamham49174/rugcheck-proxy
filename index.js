@@ -9,7 +9,7 @@ app.get('/scan/:token', async (req, res) => {
   const token = req.params.token;
   try {
     const response = await axios.get(
-      \`https://api.solsniffer.com/v1/token/\${token}?apikey=\${API_KEY}\`
+      `https://api.solsniffer.com/v1/token/${token}?apikey=${API_KEY}`
     );
     res.json(response.data);
   } catch (error) {
@@ -19,5 +19,5 @@ app.get('/scan/:token', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(\`✅ SolSniffer Proxy läuft auf Port \${PORT}\`);
+  console.log(`✅ SolSniffer Proxy läuft auf Port ${PORT}`);
 });
